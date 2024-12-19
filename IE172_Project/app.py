@@ -4,9 +4,8 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import webbrowser
 
-app = dash.Dash(__name__, title='Sineflix Movie Theater', use_pages=True, external_stylesheets=[dbc.themes.SLATE])
+app = dash.Dash(__name__, title='Sineflix Movie Theater', use_pages=True, external_stylesheets=[dbc.themes.DARKLY])
 
-# Sidebar setup
 sidebar = dbc.Nav(
     [
         dbc.NavLink(
@@ -15,13 +14,13 @@ sidebar = dbc.Nav(
             ],
             href=page["path"],
             active="exact",
-            className="text-light py-4"
+            className="py-4"
         )
         for page in dash.page_registry.values()
     ],
     pills=True,
     vertical=True,
-    className="border border-primary rounded",  # Dark background for the Slate theme
+    className="bg-dark rounded",  # Dark background for the Slate theme
 )
 
 # Layout setup
@@ -33,7 +32,7 @@ app.layout = dbc.Container([
                 html.Img(src='assets/logo.png', height="80px")  # Logo image
             ], 
         ),
-    ], className='bg-primary mb-4 mx-1 p-1 rounded-3', style={'height': '90px '}),
+    ], className='bg-dark mb-4 mx-1 p-1 rounded-3', style={'height': '90px '}),
 
     # Main content layout with sidebar
     dbc.Row(

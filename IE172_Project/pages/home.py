@@ -146,6 +146,6 @@ layout = dbc.Container(
 
 
 if __name__ == "__main__":
-    app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+    app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
     app.layout = layout
     app.run_server(debug=True)
